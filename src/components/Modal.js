@@ -47,7 +47,7 @@ const Close = styled.span`
     cursor: pointer;
 `;
 
-const BottonYes = styled.span`
+const ButtonYes = styled.span`
     position: absolute;
     right: 160px;
     top:50px;
@@ -62,7 +62,7 @@ const BottonYes = styled.span`
     font-size: 12px;
     cursor: pointer;
 `;
-const BottonNot = styled.span`
+const ButtonNot = styled.span`
     position: absolute;
     right: 50px;
     top:50px;
@@ -89,8 +89,8 @@ export const Modal = (props) => {
             <Content onClick={contentComponentClickHandle}>
                 <Close onClick={props.close}/>
                 {props.children}
-                <BottonYes onClick={props.yes}>Да</BottonYes>
-                <BottonNot onClick={props.not}>Нет</BottonNot>
+                <ButtonYes onClick={props.yes}>Да</ButtonYes>
+                <ButtonNot onClick={props.not}>Нет</ButtonNot>
             </Content>
         </Backdrop>
     )

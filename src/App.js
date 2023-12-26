@@ -12,13 +12,11 @@ function App() {
         setTasks(tasks_local)
     }, []);
 
-    const Serch = (event) => {
+    const Search = (event) => {
         console.log("search", event.target.value);
-        var count_tasks = localStorage.getItem("count_tasks")
-        var count_tasks_number = parseInt(count_tasks)
-        var t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
+        let t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
         console.log("Array", t)
-        var f = t.filter((item => item.includes(`${event.target.value}`)))
+        let f = t.filter((item => item.includes(`${event.target.value}`)))
         setTasks(f)
     }
 
@@ -27,7 +25,7 @@ function App() {
             <div className="App-header">
                 <h2>Список дел</h2>
                 <AlertAddTask ></AlertAddTask>
-                <input className={"search"} placeholder={"Поиск.."} style={{marginBottom: "5px"}} onChange={Serch}/>
+                <input className={"search"} placeholder={"Поиск.."} style={{marginBottom: "5px"}} onChange={Search}/>
                 <List tasks={tasks}></List>
             </div>
              <DeleteAll></DeleteAll>

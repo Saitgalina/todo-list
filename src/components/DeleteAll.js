@@ -19,9 +19,8 @@ const Delete = styled.span`
 export const DeleteAll = (props) => {
 
     const deleteAll = (event) => {
-        var count_tasks = localStorage.getItem("count_tasks")
-        var count_tasks_number = parseInt(count_tasks)
-        var t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
+        let count_tasks = localStorage.getItem("count_tasks")
+        let t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
         console.log("Array", t)
         t = []
         localStorage.setItem("tasks", JSON.stringify(t));

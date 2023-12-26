@@ -33,15 +33,13 @@ export const AlertAddTask = (props) => {
 
     const saveAlert = (event) => {
         const elem = document.getElementById("value-task-title")
-        var count_tasks = localStorage.getItem("count_tasks")
-
-        var count_tasks_number = parseInt(count_tasks)
-
-        var t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
+        let count_tasks = localStorage.getItem("count_tasks")
+        let count_tasks_number = parseInt(count_tasks)
+        let t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
         console.log("Array", t)
         t[count_tasks_number] = elem.value;
         localStorage.setItem("tasks", JSON.stringify(t));
-        localStorage.setItem("count_tasks", count_tasks_number+1);
+        localStorage.setItem("count_tasks", `${count_tasks_number + 1}`);
 
         console.log("count_tasks", count_tasks)
         console.log("elem", elem.value)

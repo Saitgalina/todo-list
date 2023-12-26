@@ -34,15 +34,13 @@ export const AlertDeleteTask = (props) => {
 
     const yesAlert = (event) => {
         console.log("title", props.title)
-        const elem = document.getElementById("value-task-title")
-        var count_tasks = localStorage.getItem("count_tasks")
-
-        var count_tasks_number = parseInt(count_tasks)
-        var t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
+        let count_tasks = localStorage.getItem("count_tasks")
+        let count_tasks_number = parseInt(count_tasks)
+        let t = JSON.parse(localStorage.getItem("tasks")) == null ? [] : JSON.parse(localStorage.getItem("tasks"));
         console.log("Array", t)
         t.splice(t.findIndex(item => item === `${props.title}`), 1)
         localStorage.setItem("tasks", JSON.stringify(t));
-        localStorage.setItem("count_tasks", count_tasks_number-1);
+        localStorage.setItem("count_tasks", `${count_tasks_number-1}`);
 
         console.log("count_tasks delete", count_tasks)
         console.log("elem delete", props.title)
